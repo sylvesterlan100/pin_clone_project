@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="pintCloneApp">
+<head>
+    <title>Sylvester Likey!</title>
+    <!-- AngularJS/Firebase/AngularFire -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+    <!--JQuery-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--Navbar Links-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/logo-nav.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+
+<!--................................BODY..........................................-->
+
+<body ng-controller="postCtrl">
+
+
+    <!-- .......................NAVIGATION BAR BEGINS............................. -->
+    <nav class="navbar navbar-inverse navbar-fixed-top navbgcolor" role="navigation">
+        <div class="container">
+            
+            <!-- BUTTONS WHEN SMALLER -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo1.png" class="logofix" alt="">
+                </a>
+            </div>
+
+
+            <!-- NAVIGATION BUTTONS -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#myModal">
+                         Drop a thought!
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Place Holder</a>
+                    </li>
+                    <li>
+                        <a href="#">Place Holder</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- END NAVIGATION BAR -->
+
+
+    <!-- ................................PAGE BEGINS................................. -->
+    
+    <!--......................DISPLAYING POST..............................-->
+                
+                <div class="container">
+                    <div class="row">
+
+                            <div ng-repeat="post in page" class="item">
+                                
+                                <div class="well postEffects">
+                                <div>{{post.title}}</div>
+                                <img src="{{post.image}}">
+                                
+                                <div>{{post.userComment}}</div>
+                                <div>{{post.category}}</div>
+                                <div>{{post.comment}}</div>
+                                 
+                        
+                                <button ng-click="deletePost(post)">Delete</button> <!--DELETE POST-->
+                                </div>
+                            </div>
+                        
+                        
+                    </div>
+                </div>
+                
+                
+
+
+
+
+
+
+                <!-- .................MODAL POPUP BEGINS.............................. -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Please leave a thought!</h4>
+                      </div>
+                      <div class="modal-body">
+                        
+                        <!--ADDING POST-->
+
+                        <form ng-submit="addPost(image, title, category, userComment);">
+                            <label>Image Url</label>
+                            <input type="text" ng-model="image"><br>
+                            <label>Title</label>
+                            <input type="text" ng-model="title"><br>
+                            <label>Category</label>
+                            <input type="text" ng-model="category"><br>
+                            <label>Comment!</label>
+                            <input type="text" ng-model="userComment"><br>
+
+                            <input type="submit" value="Leave this thought!">
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    <!--END ADDING POST-->
+                    
+
+                    </div>
+                  </div>
+                </div>
+                <!--MODAL POPUP FORM ENDS-->
+
+
+              
+
+            
+    <!-- /.container -->
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

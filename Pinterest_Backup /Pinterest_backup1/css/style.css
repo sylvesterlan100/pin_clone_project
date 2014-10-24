@@ -1,0 +1,28 @@
+.postEffects{
+	border: 1px black solid;
+
+
+
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 18em;
+ -webkit-column-width: 18em;
+ -moz-column-gap: 1em;
+ -webkit-column-gap:1em; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  .25rem;
+ width:  500px; 
+}
+
+.well {
+ position:relative;
+ display: block;
+}

@@ -1,0 +1,53 @@
+<html ng-app="RequestApplication">
+<head>
+	<title></title>
+	<!--JQuery, Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js" type="text/javascript"></script>
+
+	<!--Bootstrap-->
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet" type="text/css"/>
+
+	<!-- CSS-->
+ 	<link href="style.css" rel="stylesheet" type="text/css"/>
+ 	<script src="app.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+	<div ng-controller="discountController">
+
+		<div>
+			<p>
+					
+				<input type="text" ng-model="searcher.deal_id">
+				<br>
+				<br>
+			</p>
+		</div>
+		
+		<ul>
+			<li ng-repeat="deal in names.latestDeals|filter:searcher">
+				
+				<strong>{{deal.title}}</strong><br><br>
+				<strong>End Date:</strong> {{deal.end_date}}<br>
+				<strong>Start Value:</strong> {{deal.start_value | currency}}<br>
+				<strong>After Discount:</strong> {{deal.after_discount_value|currency}}<br>
+				<strong>Address:</strong> {{deal.address}}<br>
+				<strong>Deal ID:</strong> {{deal.deal_id}}<br><br>
+
+				<img ng-src="{{deal.category_marker}}"><br>
+				<img ng-src="{{deal.image}}"><br>
+				<br><br><br>
+			</li>
+
+
+
+		</ul>	
+
+	</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="poke">
+  <head>
+    <title></title>
+    <script type="text/javascript" src="lib/angular.min.js"></script>
+    <script type="text/javascript" src="models/pokeProfiles.js"></script>
+    <script type="text/javascript" src="controllers/angularController.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+
+  <body>
+<div ng-controller="pokeController">
+	<ul>
+
+	<div>
+	
+		<div class="searchbox">Search by Name: <input type="text"  ng-model="pokefilter.name"></div>
+		<div class="searchbox">Search by Category: <input type="text" ng-model="pokefilter.category"></div>
+		<div class="searchbox">Search by Ability: <input type="text" ng-model="pokefilter.abilities"></div>
+		<div class="searchbox">Search by Type: <input type="text" ng-model="pokefilter.type"></div>
+		<div class="searchbox">Search by Weakness: <input type="text" ng-model="pokefilter.weaknesses"></div>
+	
+	
+	</div>
+
+	<!--Sorting!!!-->
+		Sort By: 
+		<a href="" ng-click="order('name')">Name</a>
+		<a href="" ng-click="order('category')">Category</a>
+		<a href="" ng-click="order('abilities')">Abilities</a>
+		<a href="" ng-click="order('type')">Type</a>
+		<a href="" ng-click="order('weaknesses')">Weaknesses</a>
+		
+
+		<br>
+<!--adding Pokemon-->
+
+		<div>
+			<form ng-submit =" addPoke(pic, name, category, abilities, type, weaknesses);">
+				<label>Pic</label>
+				<input type ="text" ng-model = "pic"><br>
+				<label>Name</label>
+				<input type ="text" ng-model = "name"><br>
+				<label>Category</label>
+				<input type ="text" ng-model = "category"><br>
+				<label>Abilities</label>
+				<input type ="text" ng-model = "abilities"><br>
+				<label>Type</label>
+				<input type ="text" ng-model = "type"><br>
+				<label>Weakness</label>
+				<input type ="text" ng-model = "weaknesses"><br>
+				<input type = "submit" value="Add Pokemon">
+
+			</form>
+
+
+
+
+		</div>
+
+
+		<div class="profileitem" ng-repeat="pokemon in list">
+
+			
+			<img src="{{pokemon.image_url}}" class="imgsmall">
+			<br>
+
+			Name: {{pokemon.name}}
+			<br>
+			Category: {{pokemon.category}}
+				<br>
+			Abilities: {{pokemon.abilities}}
+			<br>
+			Type: {{pokemon.type.join(', ')}}
+			<br>
+			Weaknesses: {{pokemon.weaknesses.join(', ')}}
+
+			
+			<br>
+			<button ng-click="deletePoke($index)">Lethal Injection!</button>
+		</div>
+	</ul>
+
+
+</div>
+
+  </body>
+</html>

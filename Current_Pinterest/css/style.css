@@ -1,0 +1,26 @@
+.postEffects{
+	border: 1px black solid;
+
+}
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.row {
+ -moz-column-width: 300px;
+ -webkit-column-width: 300px;
+ -moz-column-gap: 5px;
+ -webkit-column-gap:5px; 
+  
+}
+
+.item {
+ display: inline-block;
+ padding:  10pxrem;
+ width:  100%; 
+}
+
+.well {
+ position:relative;
+ display: block;
+}
