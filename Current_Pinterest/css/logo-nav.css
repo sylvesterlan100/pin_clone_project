@@ -8,6 +8,12 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
 }
 
+.floater
+{
+
+    float:right;
+}
+
 .logofix{
     
     border-radius: 10%;
@@ -17,7 +23,7 @@ body {
 
 .navbgcolor{
 
-	background: linear-gradient(black, gray);
+	background: linear-gradient(black, black);
 }
 
 .navbar-fixed-top .nav {

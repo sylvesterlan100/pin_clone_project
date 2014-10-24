@@ -35,17 +35,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                
+
                 <a class="navbar-brand" href="#">
                     <img src="img/logo.jpg" class="logofix" alt="">
                 </a>
             </div>
 
-
             <!-- NAVIGATION BUTTONS -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav floater">
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#myModal">
+                        <a href="#" data-toggle="modal" data-target="#myModal" class="marginleft">
                          Drop a thought!
                         </a>
                     </li>
@@ -74,13 +75,13 @@
                             <div ng-repeat="post in page" class="item">
                                 
                                 <div class="well postEffects">
-                                <div>{{post.title}}</div>
+                                <div><h4>{{post.title}}</h4></div>
                                 <img src="{{post.image}}" class="imgsize">
                                 
                                 <div><p class="textsize">{{post.userComment}}</p></div>
                                 
                                 <div>{{post.comment}}</div>
-                                <div>{{post.category}}</div>
+                                <div><em>{{post.category}}</em></div>
                         
                                 <button ng-click="deletePost(post)">Delete</button> <!--DELETE POST-->
                                 </div>
