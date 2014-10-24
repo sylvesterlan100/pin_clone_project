@@ -1,23 +1,75 @@
+/***************GENERAL***************************/
+
+.bgcolor{
+
+	background-image: url("../img/earthbg2.png");
+	background-attachment: fixed;
+	background-repeat: none;
+	background-size: cover;
+}
+
+
+
+
+/***************POST EFFECTS*********************/
+
 .postEffects{
 	border: 1px black solid;
 
 }
 
+.imgsize{
+	width:100%;
+	border-radius: 5%;
+	border: 1px white solid;
+}
+
+.textsize{
+	width:100%;
+	word-wrap: break-word;
+
+}
+
+
+
+/**************MODAL POPUP*******************/
+
+.modalAlign{
+	width: 100px;
+
+}
+
+.inputNComment{
+	width: 70%;
+
+}
+.inputComment{
+	width: 70%;
+	height: 80%;
+}
+
+
+/*************MASONRY COLUMNS*********************/
+
 *, *:before, *:after {box-sizing:  border-box !important;}
 
 
 .row {
- -moz-column-width: 300px;
- -webkit-column-width: 300px;
- -moz-column-gap: 5px;
- -webkit-column-gap:5px; 
+ -moz-column-width: 200px;
+ -webkit-column-width: 200px;
+
+ -moz-column-gap: 0px;
+ -webkit-column-gap:0px; 
+ margin:0;
+ padding:0;
   
 }
 
 .item {
  display: inline-block;
- padding:  10pxrem;
- width:  100%; 
+ padding:  0px;
+ width:  200px;
+ margin: 0; 
 }
 
 .well {

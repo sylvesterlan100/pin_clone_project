@@ -20,7 +20,7 @@
 
 <!--................................BODY..........................................-->
 
-<body ng-controller="postCtrl">
+<body ng-controller="postCtrl" class="bgcolor">
 
 
     <!-- .......................NAVIGATION BAR BEGINS............................. -->
@@ -36,7 +36,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="img/logo1.png" class="logofix" alt="">
+                    <img src="img/logo.jpg" class="logofix" alt="">
                 </a>
             </div>
 
@@ -75,12 +75,12 @@
                                 
                                 <div class="well postEffects">
                                 <div>{{post.title}}</div>
-                                <img src="{{post.image}}">
+                                <img src="{{post.image}}" class="imgsize">
                                 
-                                <div>{{post.userComment}}</div>
-                                <div>{{post.category}}</div>
+                                <div><p class="textsize">{{post.userComment}}</p></div>
+                                
                                 <div>{{post.comment}}</div>
-                                 
+                                <div>{{post.category}}</div>
                         
                                 <button ng-click="deletePost(post)">Delete</button> <!--DELETE POST-->
                                 </div>
@@ -90,10 +90,6 @@
                     </div>
                 </div>
                 
-                
-
-
-
 
 
 
@@ -110,20 +106,21 @@
                         <!--ADDING POST-->
 
                         <form ng-submit="addPost(image, title, category, userComment);">
-                            <label>Image Url</label>
-                            <input type="text" ng-model="image"><br>
-                            <label>Title</label>
-                            <input type="text" ng-model="title"><br>
-                            <label>Category</label>
-                            <input type="text" ng-model="category"><br>
-                            <label>Comment!</label>
-                            <input type="text" ng-model="userComment"><br>
+                            <label class="modalAlign">Image Url</label><br>
+                            <input type="text" ng-model="image" class="inputNComment"><br>
+                            <label class="modalAlign">Title</label><br>
+                            <input type="text" ng-model="title" class="inputNComment"><br>
+                            <label class="modalAlign">Category</label><br>
+                            <input type="text" ng-model="category" class="inputNComment"><br>
+                            <label class="modalAlign">Comment!</label><br>
+                            <textarea name="email" id="email" ng-model="userComment"  rows="10" cols="63"></textarea><br>
+                           <!--  <input type="text" ng-model="userComment" class="inputComment"> -->
 
                             <input type="submit" value="Leave this thought!">
                         </form>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        
                       </div>
                     <!--END ADDING POST-->
                     
