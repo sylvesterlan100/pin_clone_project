@@ -40,22 +40,22 @@
                 <a class="navbar-brand" href="#">
                     <img src="img/logo.jpg" class="logofix" alt="">
                 </a>
+                
             </div>
 
             <!-- NAVIGATION BUTTONS -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <h3 class="inline marginTitle colorTitle">My Animal Paradise</h3>
                 <ul class="nav navbar-nav floater">
                     <li>
-                        <a href="#" data-toggle="modal" data-target="#myModal" class="marginleft">
-                         Drop a thought!
+                        <a href="#" data-toggle="modal" data-target="#myModal">
+                         Leave a Discovery!
                         </a>
                     </li>
                     <li>
-                        <a href="#">Place Holder</a>
+                        <input type="text" placeholder="Search posts" ng-model="search" class="searchbar">
                     </li>
-                    <li>
-                        <a href="#">Place Holder</a>
-                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -72,9 +72,15 @@
                 <div class="container">
                     <div class="row">
 
-                            <div ng-repeat="post in page" class="item">
+                            <div ng-repeat="post in page|filter:search:true" class="item">
                                 
-                                <div class="well postEffects">
+                                
+
+
+
+
+
+                                <div class="well wellmargin postEffects">
                                 <div><h4>{{post.title}}</h4></div>
                                 <img src="{{post.image}}" class="imgsize">
                                 
@@ -82,7 +88,13 @@
                                 
                                 <div>{{post.comment}}</div>
                                 <div><em>{{post.category}}</em></div>
-                        
+                                <!-- <div>{{post.tags}}</div> -->
+                                
+
+
+
+
+
                                 <button ng-click="deletePost(post)">Delete</button> <!--DELETE POST-->
                                 </div>
                             </div>
@@ -100,13 +112,13 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Please leave a thought!</h4>
+                        <h4 class="modal-title" id="myModalLabel">Please leave your fun fact!</h4>
                       </div>
                       <div class="modal-body">
                         
                         <!--ADDING POST-->
 
-                        <form ng-submit="addPost(image, title, category, userComment);">
+                        <form ng-submit="addPost(image, title, category, userComment, tags);" >
                             <label class="modalAlign">Image Url</label><br>
                             <input type="text" ng-model="image" class="inputNComment"><br>
                             <label class="modalAlign">Title</label><br>
@@ -115,9 +127,10 @@
                             <input type="text" ng-model="category" class="inputNComment"><br>
                             <label class="modalAlign">Comment!</label><br>
                             <textarea name="email" id="email" ng-model="userComment"  rows="10" cols="63"></textarea><br>
-                           <!--  <input type="text" ng-model="userComment" class="inputComment"> -->
+                            <label class="modalAlign">Tags</label><br>
+                            <input type="text" value="animal facts" ng-model="tags" class="inputNComment"><br><br>
 
-                            <input type="submit" value="Leave this thought!">
+                            <input type="submit" value="Leave this fact!">
                         </form>
                       </div>
                       <div class="modal-footer">

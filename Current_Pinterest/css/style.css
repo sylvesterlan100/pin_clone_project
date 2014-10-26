@@ -7,7 +7,15 @@
 	background-repeat: none;
 	background-size: cover;
 }
+.inline{
+	display: inline-block;
+}
 
+
+.margintop2{
+
+	margin-top: 13px;
+}
 
 
 
@@ -21,7 +29,7 @@
 .imgsize{
 	width:100%;
 	border-radius: 5%;
-	border: 1px white solid;
+	
 }
 
 .textsize{
@@ -30,9 +38,17 @@
 
 }
 
+.wellmargin{
+
+	margin-top: 0px;
+	padding-top: 5px;
+}
+
 
 
 /**************MODAL POPUP*******************/
+
+
 
 .modalAlign{
 	width: 100px;
