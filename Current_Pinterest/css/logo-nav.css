@@ -8,13 +8,28 @@ body {
 /*****************TITLE********************/
 
 .colorTitle{
-    color: #5C872D;
+    color: white;
 }
 
 .marginTitle{
     margin-top: 27px;
     margin-left: 50px;
+    margin-right: 20px;
 }
+
+/****************LIKED******************/
+.heartsize{
+    margin-left: 20px;
+    padding-left:10px;
+    width: 25px;
+    margin-bottom:8px;
+    color:white;
+}
+
+.white{
+    color:white;
+}
+
 
 /*****************LOGO********************/
 
@@ -43,7 +58,7 @@ body {
 
 .navbgcolor{
 
-	background: linear-gradient(black, black);
+	background: linear-gradient(black,#1D1D1D);
 }
 
 .navbar-fixed-top .nav {

@@ -37,15 +37,17 @@
                 </button>
                 
 
-                <a class="navbar-brand" href="#">
-                    <img src="img/logo.jpg" class="logofix" alt="">
-                </a>
+                
+                    <a class="navbar-brand" href=""><img src="img/logo.png" class="logofix" alt=""></a>
+                
                 
             </div>
 
             <!-- NAVIGATION BUTTONS -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <h3 class="inline marginTitle colorTitle">My Animal Paradise</h3>
+                <input type="checkbox" class="heartsize" ng-model="showHidden"/><span class="white">Liked</span>
+                
                 <ul class="nav navbar-nav floater">
                     <li>
                         <a href="#" data-toggle="modal" data-target="#myModal">
@@ -64,6 +66,7 @@
     </nav>
     <!-- END NAVIGATION BAR -->
 
+        
 
     <!-- ................................PAGE BEGINS................................. -->
     
@@ -72,9 +75,9 @@
                 <div class="container">
                     <div class="row">
 
-                            <div ng-repeat="post in page|filter:search:true" class="item">
+                            <div ng-repeat="post in page|filter:search:true|filter: filter.search" class="item">
                                 
-
+                                <div ng-hide="showHidden && !post.liked">
                                 <div class="well wellmargin postEffects">
 
 
@@ -85,30 +88,34 @@
                                     
 
                                 
-                                    <img src="{{post.image}}" class="imgsize">
-                                    <em >({{post.category}})</em>
+                                    <img src="{{post.image}}" class="imgsize margintop">
+                                    
                                     
                                     <div><p class="textsize margintop2">{{post.userComment}}</p></div>
                                     
                                     <div>{{post.comment}}</div>
+                                    <hr class="margin1">
                                     
 
 
 
                                     <div class="row">
-                                            <div class="col-sm-8 nopad"><button ng-click="deletePost(post)">Euthanize</button></div>
+                                            <div class="col-sm-8 nopad"> <em class="catsize">({{post.category}})</em></div>
+                                            <a href="" class="col-sm-1 nopad" ng-click="deletePost(post)"><img src="img/trash.png" class="trash"></a>
 
-                                            <div ng-switch on="post.liked" class="col-sm-3" text-align="left">
-                                                <a href="" ng-switch-when="false" ng-click="toggleLike(post)"><img class="likesize" src="img/heart.png"></a>
-                                                <a href="" ng-switch-when="true" ng-click="toggleLike(post)" class="liked"><img class="likesize" src="img/heart1.png"></a>
+
+
+                                            
+
+                                            <div ng-switch on="post.liked" class="col-sm-1" >
+                                                <a href="" ng-switch-when="false" ng-click="toggleLike(post)"><img class="likesize" src="img/heart1.png"></a>
+                                                <a href="" ng-switch-when="true" ng-click="toggleLike(post)" class="liked"><img class="likesize" src="img/heart2.png"></a>
                                             </div>
 
                                              
                                     </div>
 
                                     
-
-
                                      <!--DELETE POST-->
                                     <!-- <div><br><br>{{post.tags}}</div> -->
 
@@ -116,7 +123,7 @@
                                 </div>
                             </div>
                         
-                        
+                        </div>
                     </div>
                 </div>
                 

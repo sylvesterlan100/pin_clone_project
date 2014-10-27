@@ -2,7 +2,7 @@
 
 var app = angular.module("pintCloneApp", ["firebase"]); 
 
-app.controller("postCtrl", function($scope, $firebase){
+app.controller("postCtrl", function($scope, $firebase, $filter){
 	var postRef = new Firebase('https://myhappyboard.firebaseio.com/'); 
 	var sync = $firebase(postRef); 
 	$scope.page = sync.$asArray(); //Make firebase data into an array
@@ -93,6 +93,8 @@ app.controller("postCtrl", function($scope, $firebase){
 		
 
 	}
+
+	
 
 
 
