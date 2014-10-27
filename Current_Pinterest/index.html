@@ -74,28 +74,45 @@
 
                             <div ng-repeat="post in page|filter:search:true" class="item">
                                 
-                                
-
-
-
-
 
                                 <div class="well wellmargin postEffects">
-                                <div><h4>{{post.title}}</h4></div>
-                                <img src="{{post.image}}" class="imgsize">
+
+
+                                    
+                                    <h4>{{post.title}}</h4> 
+
+
+                                    
+
                                 
-                                <div><p class="textsize">{{post.userComment}}</p></div>
-                                
-                                <div>{{post.comment}}</div>
-                                <div><em>{{post.category}}</em></div>
-                                <!-- <div>{{post.tags}}</div> -->
-                                
+                                    <img src="{{post.image}}" class="imgsize">
+                                    <em >({{post.category}})</em>
+                                    
+                                    <div><p class="textsize margintop2">{{post.userComment}}</p></div>
+                                    
+                                    <div>{{post.comment}}</div>
+                                    
 
 
 
+                                    <div class="row">
+                                            <div class="col-sm-8 nopad"><button ng-click="deletePost(post)">Euthanize</button></div>
+
+                                            <div ng-switch on="post.liked" class="col-sm-3" text-align="left">
+                                                <a href="" ng-switch-when="false" ng-click="toggleLike(post)"><img class="likesize" src="img/heart.png"></a>
+                                                <a href="" ng-switch-when="true" ng-click="toggleLike(post)" class="liked"><img class="likesize" src="img/heart1.png"></a>
+                                            </div>
+
+                                             
+                                    </div>
+
+                                    
 
 
-                                <button ng-click="deletePost(post)">Delete</button> <!--DELETE POST-->
+                                     <!--DELETE POST-->
+                                    <!-- <div><br><br>{{post.tags}}</div> -->
+
+
                                 </div>
                             </div>
                         
@@ -119,6 +136,7 @@
                         <!--ADDING POST-->
 
                         <form ng-submit="addPost(image, title, category, userComment, tags);" >
+
                             <label class="modalAlign">Image Url</label><br>
                             <input type="text" ng-model="image" class="inputNComment"><br>
                             <label class="modalAlign">Title</label><br>

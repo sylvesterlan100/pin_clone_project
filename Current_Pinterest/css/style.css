@@ -17,6 +17,17 @@
 	margin-top: 13px;
 }
 
+.padtopcat
+{
+
+	padding-top:8px;
+}
+.nopad
+{
+	padding: 0;
+}
+
+
 
 
 /***************POST EFFECTS*********************/
@@ -29,7 +40,7 @@
 .imgsize{
 	width:100%;
 	border-radius: 5%;
-	
+	margin-bottom: 0px;
 }
 
 .textsize{
@@ -44,7 +55,13 @@
 	padding-top: 5px;
 }
 
+.liked{
+	color:green;
+}
 
+.likesize{
+	width:20px;
+}
 
 /**************MODAL POPUP*******************/
 
@@ -63,6 +80,7 @@
 	width: 70%;
 	height: 80%;
 }
+
 
 
 /*************MASONRY COLUMNS*********************/

@@ -9,9 +9,10 @@ app.controller("postCtrl", function($scope, $firebase){
 	 
 
 //ADD OBJECT TO DATABASE
-
+	
 	$scope.addPost = function(w, x, y, z, a){
 		
+
 		
 			if(w===undefined||w===null)
 				wedit="";
@@ -45,8 +46,6 @@ app.controller("postCtrl", function($scope, $firebase){
 				aedit=a.split(", ");
 			}
 
-			console.log(wedit)
-			console.log(zedit)
 			if(zedit===""&&wedit==="")
 			{
 				alert("Please leave a comment or picture!");
@@ -61,7 +60,7 @@ app.controller("postCtrl", function($scope, $firebase){
 			}
 			else
 			{
-				$scope.page.$add({ image:wedit, title:xedit, category:yedit, userComment:zedit, comment:"", liked:"false", tags:aedit }); // firebase gives us the ability to use this $add function
+				$scope.page.$add({ image:wedit, title:xedit, category:yedit, userComment:zedit, comment:"", liked:false, tags:aedit }); // firebase gives us the ability to use this $add function
 				$scope.image = "";
 				$scope.title = "";
 				$scope.category = "";
@@ -83,6 +82,17 @@ app.controller("postCtrl", function($scope, $firebase){
 		}
 	}
 	
+// TOGGLE LIKE BUTTON
+	$scope.toggleLike=function(post){
+		console.log($scope.page);
+		post.liked=(!post.liked);
+		
+		$scope.page.$save(post);
+
+			
+		
+
+	}
 
 
 
