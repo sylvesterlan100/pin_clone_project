@@ -7,6 +7,10 @@
 	/*background-repeat: none;*/
 	/*background-size: cover;*/
 }
+
+.vis{
+	display: initial;
+}
 .inline{
 	display: inline-block;
 }
@@ -42,6 +46,7 @@
 
 .postEffects{
 	border: 1px black solid;
+	box-shadow: 5px 5px 2px #888888;
 
 }
 
@@ -86,30 +91,6 @@
 	color:black;
 }
 
-
-.ng-animate.myspeed {
-  -webkit-animation-duration: 1.8s; // duration in second or millisecond
-  animation-duration: 1.8s;  // duration in second or millisecond
-}
-.ng-animate.myspeed.ng-hide-add-active {
-    display:block !important; // this is important for display the element until animation end. 
-}
-
-// select your show effect
-.slide-down-to-left.ng-enter,
-.slide-down-to-left-add,
-.slide-down-to-left.ng-hide-remove,
-.slide-down-to-left.ng-move {
-  -webkit-animation-name: slideDown;
-    animation-name:slideDown;
-} 
-// select your hide effect
-.slide-down-to-left.ng-leave,
-.slide-down-to-left-remove,
-.slide-down-to-left.ng-hide {
-  -webkit-animation-name: slideOutLeft;
-    animation-name: slideOutLeft;
-} 
 
 
 

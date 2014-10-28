@@ -24,8 +24,8 @@ app.controller("postCtrl", function($scope, $firebase, $filter){
 			else
 				xedit=x;
 
-			if(y===undefined||y===null)
-				yedit="";
+			if(y===undefined||y===null||y==="")
+				yedit="none";
 			else
 				yedit=y;
 
@@ -75,23 +75,33 @@ app.controller("postCtrl", function($scope, $firebase, $filter){
 
 // DELETE OBJECT FROM DATABASE
 
-	$scope.deletePost = function(post){ 
+	$scope.deletePost = function(post, index){ 
+		
+		$("#" + index).addClass("animated rubberBand");
 		var check = confirm("Are you sure you want to delete this post?");
 		if(check == true){
+			
 			$scope.page.$remove(post);	
 		}
+		else
+		{
+			// alert("They are so cute, aren't they?")
+			
+			$("#" + index).removeClass("animated rubberBand");
+
+		}
+		
+		$("#" + index).removeClass("animated rubberBand");
 	}
 	
 // TOGGLE LIKE BUTTON
 	$scope.toggleLike=function(post){
+	
+
+
 		console.log($scope.page);
 		post.liked=(!post.liked);
-		
 		$scope.page.$save(post);
-
-			
-		
-
 	}
 
 	
