@@ -50,6 +50,8 @@
 
 }
 
+
+
 .imgsize{
 	width:100%;
 	border-radius: 5%;
@@ -91,6 +93,9 @@
 	color:black;
 }
 
+.pin:hover{
+	opacity: 0.75;
+};
 
 
 

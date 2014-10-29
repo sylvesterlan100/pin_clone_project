@@ -105,8 +105,10 @@ app.controller("postCtrl", function($scope, $firebase, $filter){
 	}
 
 	
-
-
+//MODAL POP UP
+	$scope.setModalPicture = function(picture) {
+			$scope.modalPicture = picture;
+	}
 
 
 })

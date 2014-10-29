@@ -61,6 +61,7 @@
                     </li>
                     <li>
                         <input type="text" placeholder="Search posts" ng-model="search" class="searchbar">
+                        
                     </li>
                     
                 </ul>
@@ -88,12 +89,12 @@
                                 <div ng-hide="showHidden && !post.liked">
                                 <div class="well wellmargin postEffects" >
 
-                                    
+                                    <div class="pin">
                                     <h4>{{post.title}}</h4>                                     
 
                                 
-                                    <img src="{{post.image}}" class="imgsize margintop">
-                                    
+                                    <a href="" data-toggle="modal" data-target="#postModal" ng-click="setModalPicture(post.image)"><img src="{{post.image}}" class="imgsize margintop"></a>
+                                    </div>
                                     
                                     <div><p class="textsize margintop2">{{post.userComment}}</p></div>
                                     
@@ -188,8 +189,15 @@
               </div>
             </div>
 
+            <!--................IMAGE MODAL.....................-->
 
-
+            <div class="modal fade bs-view-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="postModal">
+            <div class="modal-dialog modal-md">
+              <div class="modal-content">
+                <img src="{{modalPicture}}" width="100%">
+              </div>
+            </div>
+          </div>
 
 
 
